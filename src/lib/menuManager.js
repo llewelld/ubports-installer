@@ -36,22 +36,18 @@ class MenuManager {
         label: "About",
         submenu: [
           {
-            label: "About the UBports Foundation...",
-            click: () => shell.openExternal("https://ubports.com")
+            label: "About Jolla...",
+            click: () => shell.openExternal("https://jolla.com")
           },
           {
-            label: "About Ubuntu Touch...",
-            click: () => shell.openExternal("https://ubuntu-touch.io")
-          },
-          {
-            label: "Donate",
-            click: () => shell.openExternal("https://ubports.com/donate")
+            label: "About Sailfish OS...",
+            click: () => shell.openExternal("https://sailfishos.org")
           },
           {
             label: "Source",
             click: () =>
               shell.openExternal(
-                "https://github.com/ubports/ubports-installer/tree/" +
+                "https://github.com/llewelld/sailfish-installer/tree/" +
                   packageInfo.version
               )
           },
@@ -59,7 +55,7 @@ class MenuManager {
             label: "License",
             click: () =>
               shell.openExternal(
-                "https://github.com/ubports/ubports-installer/blob/" +
+                "https://github.com/llewelld/sailfish-installer/blob/" +
                   packageInfo.version +
                   "/LICENSE"
               )
@@ -156,17 +152,6 @@ class MenuManager {
                 "never.windowsDrivers",
                 !settings.get("never.windowsDrivers")
               )
-          },
-          {
-            label: "Never ask for OPEN-CUTS automatic reporting",
-            checked: settings.get("never.opencuts"),
-            type: "checkbox",
-            click: () =>
-              settings.set("never.opencuts", !settings.get("never.opencuts"))
-          },
-          {
-            label: "OPEN-CUTS API Token",
-            click: () => reporter.tokenDialog(mainWindow)
           }
         ]
       },
@@ -177,7 +162,7 @@ class MenuManager {
             label: "Bug tracker",
             click: () =>
               shell.openExternal(
-                "https://github.com/ubports/ubports-installer/issues"
+                "https://github.com/llewelld/sailfish-installer/issues"
               )
           },
           {
@@ -188,23 +173,12 @@ class MenuManager {
             label: "Troubleshooting",
             click: () =>
               shell.openExternal(
-                "https://docs.ubports.com/en/latest/userguide/install.html#troubleshooting"
+                "https://jolla.com/sailfishxinstall/"
               )
           },
           {
-            label: "UBports Forums",
-            click: () => shell.openExternal("https://forums.ubports.com")
-          },
-          {
-            label: "AskUbuntu",
-            click: () =>
-              shell.openExternal(
-                "https://askubuntu.com/questions/tagged/ubuntu-touch"
-              )
-          },
-          {
-            label: "Telegram",
-            click: () => shell.openExternal("https://t.me/WelcomePlus")
+            label: "Sailfish OS Forums",
+            click: () => shell.openExternal("https://forum.sailfishos.org")
           }
         ]
       }

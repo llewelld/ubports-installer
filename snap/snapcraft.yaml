@@ -1,8 +1,8 @@
-name: ubports-installer
-title: UBports Installer
-adopt-info: ubports-installer
-summary: The easy way to install Ubuntu Touch on UBports devices.
-description: A friendly cross-platform Installer for Ubuntu Touch. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.
+name: sailfish-installer
+title: Sailfish Installer
+adopt-info: sailfish-installer
+summary: The easy way to install Sailfish OS.
+description: A friendly cross-platform Installer for Sailfish OS based on the UBports installer. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.
 icon: build/icons/icon.png
 architectures:
   - build-on: amd64
@@ -16,8 +16,8 @@ confinement: strict
 base: core20
 
 apps:
-  ubports-installer:
-    command: ./app/ubports-installer --no-sandbox
+  sailfish-installer:
+    command: ./app/sailfish-installer --no-sandbox
     plugs:
       - home
       - unity7
@@ -37,7 +37,7 @@ apps:
       "LD_LIBRARY_PATH": "$SNAP_LIBRARY_PATH:$SNAP/usr/lib/x86_64-linux-gnu/"
 
 parts:
-  ubports-installer:
+  sailfish-installer:
     plugin: dump
     source: .
     build-packages:

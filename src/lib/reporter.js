@@ -124,7 +124,7 @@ class Reporter {
   async getDebugInfo(data, logUrl, runUrl) {
     return encodeURIComponent(
       [
-        `**UBports Installer \`${packageInfo.version}\` (${data.package})**`,
+        `**Sailfish Installer \`${packageInfo.version}\` (${data.package})**`,
         `Environment: \`${data.environment}\``,
         `Device: ${data.device}`,
         `Target OS: ${this.getTargetOsString()}`,
@@ -160,7 +160,7 @@ class Reporter {
    */
   async sendBugReport(data, token) {
     const logfile = await log.get();
-    const pasteUrl = paste(logfile, "UBports Installer", "text", "year").catch(
+    const pasteUrl = paste(logfile, "Sailfish Installer", "text", "year").catch(
       () => "*N/A*"
     );
     const runUrl = this.sendOpenCutsRun(token, data, logfile).catch(
@@ -275,7 +275,7 @@ class Reporter {
     return {
       modal: false,
       title: "Report an Error",
-      description: `Sorry to hear that the installer did not work for you. You can help the UBports community fix this issue by reporting your installation result. Edit the information below and click OK to submit. The installer will then automatically report a ${result} run to ubports.open-cuts.org and send a log to paste.ubuntu.com. After that, your webbrowser will open so you can create a bug report on GitHub.`,
+      description: `Sorry to hear that the installer did not work for you. You can help the Sailfish and UBports community fix this issue by reporting your installation result. Edit the information below and click OK to submit. The installer will then automatically report a ${result} run to ubports.open-cuts.org and send a log to paste.ubuntu.com. After that, your webbrowser will open so you can create a bug report on GitHub.`,
       resizable: true,
       height: 720,
       width: 650,
@@ -332,7 +332,7 @@ class Reporter {
       modal: false,
       title: "Report Success",
       description:
-        "You can help the UBports community improve the installer by reporting your installation result. Edit the information below and click OK to automatically submit a run with an attached log to ubports.open-cuts.org.",
+        "You can help the Sailfish UBports community improve the installer by reporting your installation result. Edit the information below and click OK to automatically submit a run with an attached log to ubports.open-cuts.org.",
       resizable: true,
       height: 720,
       width: 650,

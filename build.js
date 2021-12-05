@@ -58,9 +58,9 @@ cli
 
 var targetOs;
 var buildConfig = {
-  appId: "com.ubports.installer",
-  productName: "ubports-installer",
-  copyright: "Copyright © 2017-2020 UBports Foundation",
+  appId: "org.sailfishos.installer",
+  productName: "sailfish-installer",
+  copyright: "Copyright © 2017-2020 UBports Foundation, 2021 Jolla Oy",
   artifactName: "${name}_${version}_${os}_${arch}.${ext}",
   publish: [],
   files: [
@@ -108,7 +108,7 @@ switch (cli.os) {
       linux: {
         target,
         icon: "build/icons",
-        synopsis: "Install Ubuntu Touch on UBports devices",
+        synopsis: "Install Sailfish OS on your device device",
         category: "Utility"
       },
       deb: {

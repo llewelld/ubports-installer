@@ -41,20 +41,20 @@ ipcMain.on("reportResult", async (event, result, error) => {
 // Restart the installer
 // FIXME move after a better way to access mainWindow has been found
 mainEvent.on("restart", () => {
-  log.info("UBports Installer restarting...");
+  log.info("Sailfish Installer restarting...");
   core.kill();
   mainWindow.reload();
 });
 
 async function createWindow() {
   log.info(
-    "Welcome to the UBports Installer version " + packageInfo.version + "!"
+    "Welcome to the Sailfish Installer version " + packageInfo.version + "!"
   );
   mainWindow = new BrowserWindow({
     width: cli.debug ? 1600 : 800,
     height: 600,
     icon: path.join(__dirname, "../build/icons/icon.png"),
-    title: "UBports Installer (" + packageInfo.version + ")",
+    title: "Sailfish Installer (" + packageInfo.version + ")",
     kiosk: false,
     fullscreen: false,
     webPreferences: {

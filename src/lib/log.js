@@ -48,7 +48,7 @@ class Logger {
     });
 
     this.logfile = new winston.transports.File({
-      filename: path.join(cachePath, "ubports-installer.log"),
+      filename: path.join(cachePath, "sailfish-installer.log"),
       options: { flags: "w" },
       level: "command"
     });
