@@ -37,13 +37,13 @@ class CorePlugin extends Plugin {
       this.event.emit("user:write:done");
       this.event.emit(
         "user:write:status",
-        this.props.os.name + " successfully installed!",
+        this.props.os.name + " successfully installed",
         false
       );
       this.event.emit(
         "user:write:under",
         this.props.os.success_message ||
-          "All done! Enjoy exploring your new OS!"
+          "All done! Enjoy using Sailfish OS."
       );
     });
   }

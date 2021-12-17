@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=ubports-installer
-Comment=UBports Installer
-Exec=ubports-installer
+Name=sailfish-installer
+Comment=Sailfish Installer
+Exec=sailfish-installer
 Terminal=false
 Type=Application
 Icon=${SNAP}/meta/gui/icon.png

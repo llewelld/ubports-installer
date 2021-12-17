@@ -27,12 +27,12 @@ describe("core plugin", () => {
         expect(mainEvent.emit).toHaveBeenCalledWith("user:write:done");
         expect(mainEvent.emit).toHaveBeenCalledWith(
           "user:write:status",
-          "Ubuntu Touch successfully installed!",
+          "Sailfish OS successfully installed",
           false
         );
         expect(mainEvent.emit).toHaveBeenCalledWith(
           "user:write:under",
-          "All done! Enjoy exploring your new OS!"
+          "All done! Enjoy using Sailfish OS."
         );
         expect(mainEvent.emit).toHaveBeenCalledTimes(3);
       });

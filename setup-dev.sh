@@ -44,4 +44,4 @@ fi
 echo "Setting up node modules..."
 npm install
 
-echo "Dev setup complete. Thank you for hacking on the UBports Installer!"
+echo "Dev setup complete. Thank you for hacking on the Sailfish OS version of the UBports Installer!"

@@ -1,28 +1,27 @@
 {
-  "name": "ubports-installer",
+  "name": "sailfish-installer",
   "version": "0.8.9-beta",
-  "description": "The easy way to install Ubuntu Touch on UBports devices. A friendly cross-platform Installer for Ubuntu Touch. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.",
+  "description": "The easy way to install Sailfish OS on your phone. A friendly cross-platform Installer for Sailfish OS. Just connect a supported device to your PC, follow the on-screen instructions and watch this awesome tool do all the rest.",
   "keywords": [
-    "Ubuntu",
-    "Ubuntu Touch",
-    "UBports",
+    "Sailfish",
+    "Sailfish OS",
+    "Jolla",
     "UBports Installer",
     "Android",
     "ADB",
-    "Fastboot",
-    "Heimdall"
+    "Fastboot"
   ],
-  "homepage": "https://devices.ubuntu-touch.io",
+  "homepage": "https://sailfishos.org",
   "bugs": {
-    "url": "https://github.com/ubports/ubports-installer/issues",
-    "email": "info@ubports.com"
+    "url": "https://github.com/llewelld/sailfish-installer/issues",
+    "email": "info@sailfishos.org"
   },
-  "repository": "https://github.com/ubports/ubports-installer",
-  "author": "UBports Foundation <info@ubports.com>",
+  "repository": "https://github.com/llewelld/sailfish-installer",
+  "author": "UBports Foundation <info@ubports.com>; Jolla Oy info@jolla.com",
   "license": "GPL-3.0",
   "main": "src/main.js",
   "bin": {
-    "ubports-installer": "src/main.js"
+    "sailfish-installer": "src/main.js"
   },
   "scripts": {
     "start": "npm run prerender && electron .",

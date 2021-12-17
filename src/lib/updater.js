@@ -43,7 +43,7 @@ class Updater {
     } else {
       return axios
         .get(
-          "https://api.github.com/repos/ubports/ubports-installer/releases/latest",
+          "https://api.github.com/repos/llewelld/sailfish-installer/releases/latest",
           {
             json: true,
             headers: { "User-Agent": "axios" }
@@ -55,7 +55,7 @@ class Updater {
         })
         .catch(e => {
           throw new Error(
-            `Failed to get latest version of the UBports Installer: ${e}`
+            `Failed to get latest version of the Sailfish Installer: ${e}`
           );
         });
     }
