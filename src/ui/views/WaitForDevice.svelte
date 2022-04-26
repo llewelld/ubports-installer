@@ -9,6 +9,7 @@
     showSelectDeviceModal
   } from "../../stores.mjs";
 
+  let initialised = false;
   ipcRenderer.on("device:wait:device-selects-ready", (event, deviceSelects) => {
     footerData.set({
       topText: "Waiting for device",
@@ -16,6 +17,7 @@
       waitingDots: true
     });
     deviceSelectOptions.set(deviceSelects);
+    initialised = true;
   });
 </script>
 
@@ -53,10 +55,15 @@
     </p>
     <button
       id="btn-modal-select-device"
+      disabled={!initialised}
       class="btn btn-outline-dark"
       on:click={() => showSelectDeviceModal.set(true)}
     >
-      Select device manually
+      {#if initialised}
+         Select device manually
+      {:else}
+         Loading device list...
+      {/if}
     </button>
   </div>
 </div>
