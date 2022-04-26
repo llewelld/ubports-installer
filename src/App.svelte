@@ -1,6 +1,7 @@
 <script>
   //Electron imports
   const { ipcRenderer } = require("electron");
+  import branding from "../branding.json";
 
   //Store imports
   import {
@@ -106,6 +107,16 @@
       waitingDots: false
     });
     yumi.setPosition("center");
+  });
+
+  ipcRenderer.on("user:restart", () => {
+    push("/");
+    footerData.set({
+      topText: "Restarting",
+      underText: `${branding.appname} is restarting`,
+      waitingDots: true
+    });
+    yumi.setPosition("foot");
   });
 
   //Error handling

@@ -29,6 +29,7 @@ const reporter = require("./lib/reporter.js");
 const menuManager = require("./lib/menuManager.js");
 const core = require("./core/core.js");
 const branding = require("../branding.json");
+const window = require("./lib/window.js");
 
 // Enable live reload for Electron
 if (process.env.ROLLUP_WATCH) {
@@ -49,8 +50,9 @@ ipcMain.on("reportResult", async (event, result, error) => {
 // FIXME move after a better way to access mainWindow has been found
 mainEvent.on("restart", () => {
   log.info(`${branding.appname} restarting...`);
-  core.kill();
-  mainWindow.reload();
+  window.send("user:restart")
+  core.reset();
+  core.prepare(cli.file, true)
 });
 
 async function createWindow() {
@@ -86,7 +88,7 @@ async function createWindow() {
   });
 
   // Tasks we need for every start and restart
-  mainWindow.webContents.on("did-finish-load", () => core.prepare(cli.file));
+  mainWindow.webContents.on("did-finish-load", () => core.prepare(cli.file, false));
 
   // Task we need only on the first start
   mainWindow.webContents.once("did-finish-load", () => {

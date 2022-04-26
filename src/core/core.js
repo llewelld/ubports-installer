@@ -74,10 +74,14 @@ class Core {
    * @param {String} [file] config file
    * @returns {Promise}
    */
-  prepare(file) {
+  prepare(file, restart) {
     return Promise.all([
       this.readConfigFile(file),
-      this.plugins.init().catch(e => errors.toUser(e, "initializing plugins"))
+      () => { return restart
+                ? true
+                : this.plugins.init()
+                    .catch(e => errors.toUser(e, "initializing plugins"))
+      }
     ]).then(() => {
       if (this.props.config) {
         this.selectOs();
